@@ -29,16 +29,20 @@ The result is an intelligent daily briefing system that continuously works in th
 
 # ✨ Features
 
-- 🤖 Fully autonomous AI agent
-- 🧠 Persistent memory using DynamoDB
+- 🤖 Fully autonomous AI agents
+- 🧠 Persistent memory using Amazon DynamoDB
 - 📰 Fetches live Hacker News stories
-- 🚫 Avoids duplicate reporting
+- 👀 Continuously watches for new trending stories
+- 🚫 Avoids duplicate reporting using persistent memory
 - ✍️ AI-generated summaries using Amazon Nova Micro
-- 🔍 Self-critiques and improves generated content
-- 📧 Sends email briefings automatically
-- ⏰ Scheduled execution using EventBridge
+- 🔍 Self-critiques and improves generated content before delivery
+- 📧 Sends automated Morning Brief emails via Amazon SES
+- 🚨 Sends Watcher Alert emails when important new stories appear
+- ⏰ Scheduled unattended execution using Amazon EventBridge Scheduler
 - ⚡ Event-driven execution using Amazon S3
-- ☁️ Completely serverless architecture
+- 🌐 REST API exposed through Amazon API Gateway
+- 📊 Live public dashboard displaying the latest agent activity
+- ☁️ Fully serverless AWS architecture
 
 ---
 
@@ -73,6 +77,7 @@ S3 event (file upload) ──┘                          ──► SES (email)
 | Amazon SES | Sends the generated email |
 | Amazon EventBridge Scheduler | Daily unattended execution |
 | Amazon S3 | Event-based trigger |
+| Amazon API Gateway | Exposes REST API endpoints powering the live dashboard |
 | Amazon CloudWatch | Monitoring and logs |
 | IAM | Secure permissions |
 
