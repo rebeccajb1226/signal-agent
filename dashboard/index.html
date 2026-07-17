@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Signal — Live Agent Feed</title>
+<style>
+body{font-family:system-ui;background:#0d1117;color:#e6edf3;max-width:800px;margin:40px auto;padding:0 20px}
+h1{color:#58a6ff}
+.run{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;margin:16px 0}
+.meta{color:#8b949e;font-size:13px;margin-bottom:8px}
+.trace{white-space:pre-wrap;font-size:14px;line-height:1.5}
+</style>
+</head>
+<body>
+<h1>Signal — Live Agent Feed</h1>
+<p>An autonomous agent that scans, prioritizes, and only reports when something is new or notable. This page reads run history directly from the agent's memory — no one clicked a button to generate these runs.</p>
+<div id="runs">Loading...</div>
+<script>
+// Replace with your API Gateway invoke URL
+const API = "REPLACE_WITH_YOUR_API_GATEWAY_URL";
+fetch(API + "/runs").then(r => r.json()).then(runs => {
+  document.getElementById("runs").innerHTML = runs.map(r => `
+    <div class="run">
+      <div class="meta">${r.timestamp || ''} · triggered by: ${r.trigger_source || 'unknown'} · ${r.num_stories || 0} new items</div>
+      <div class="trace">${(r.final_brief || '').replace(/</g,'&lt;')}</div>
+    </div>`).join('');
+});
+</script>
+</body>
+</html>
