@@ -91,35 +91,75 @@ http://signal-agent-dashboard-rebeccavio12262.s3-website-us-east-1.amazonaws.com
 ## Video Walkthrough
 https://drive.google.com/file/d/14BRrJJK4YxDxJZsOCxefY-trffHeMfx2/view?usp=sharing
 
-# 📸 Screenshots
+## Amazon Bedrock
 
-Below are screenshots demonstrating the architecture, deployment, autonomous execution, and successful operation of the Signal AI Agent.
-
-1. **1BEDROCK.png** — Amazon Bedrock model access showing Amazon Nova models enabled for the project.
-
-2. **3DYNAMODB.png** — DynamoDB table (`signal-agent-memory`) used by the agent to remember previously processed stories and execution history.
-
-3. **4DYNAMODBITEMS.png** — Items stored in DynamoDB, demonstrating persistent memory and preventing duplicate story reports.
-
-4. **5S3.png** — Amazon S3 bucket configured as an event source for the Lambda function.
-
-5. **6LAMBDA.png** — AWS Lambda function overview showing the deployed autonomous Signal Agent.
-
-6. **7LAMBDACONFIG.png** — Lambda configuration, including environment variables used by the application.
-
-7. **8LAMBDACODE.png** — Lambda source code implementing the autonomous AI workflow.
-
-8. **10CLOUDWATCH.png** — Amazon CloudWatch logs showing successful Lambda executions and monitoring information.
-
-9. **11EVENTBRIDGE.png** — Amazon EventBridge Scheduler configured to automatically trigger the agent without human interaction.
-
-10. **13EMAIL.png** — Example AI-generated morning briefing delivered through Amazon Simple Email Service (SES).
-
-11. **14DASHBOARD.png** — Public web dashboard displaying the latest AI-generated brief and application status.
-
-12. **15api.png** — Amazon API Gateway configuration exposing REST endpoints used by the dashboard.
+![](screenshots/1BEDROCK.png)
 
 ---
+
+## DynamoDB Table
+
+![](screenshots/3DYNAMODB.png)
+
+---
+
+## DynamoDB Items
+
+![](screenshots/4DYNAMODBITEMS.png)
+
+---
+
+## Amazon S3
+
+![](screenshots/5S3.png)
+
+---
+
+## AWS Lambda
+
+![](screenshots/6LAMBDA.png)
+
+---
+
+## Lambda Configuration
+
+![](screenshots/7LAMBDACONFIG.png)
+
+---
+
+## Lambda Source Code
+
+![](screenshots/8LAMBDACODE.png)
+
+---
+
+## CloudWatch Logs
+
+![](screenshots/10CLOUDWATCH.png)
+
+---
+
+## EventBridge Scheduler
+
+![](screenshots/11EVENTBRIDGE.png)
+
+---
+
+## Generated Email
+
+![](screenshots/13EMAIL.png)
+
+---
+
+## Live Dashboard
+
+![](screenshots/14DASHBOARD.png)
+
+---
+
+## API Gateway
+
+![](screenshots/15api.png)
 
 
 ---
